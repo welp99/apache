@@ -104,7 +104,11 @@ EOF
 
 sed -i 's/ServerRoot ".*/ServerRoot "\/etc\/apache2"/' /etc/apache2/apache2.conf
 
-#11. Activation du service Apache et démarrage du service
+#11. Modification fichier permettant démarrage service apache2 (création dossier /var/run/apache2)
+
+sed -i '68 s/.*/[ ! -d ${APACHE_RUN_DIR:-/var/run/apache2} ] && mkdir -p ${APACHE_RUN_DIR:-/var/run/apache2}/' /usr/sbin/apachectl
+
+#12. Activation du service Apache et démarrage du service
 
 systemctl daemon-reload
 systemctl enable apache2.service
