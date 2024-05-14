@@ -1,5 +1,5 @@
 #1. Installation des dépendances
-apt install build-essential libssl-dev libxml2-dev libpcre3-dev libapr1-dev libaprutil1-dev ssl-cert uuid -y
+apt install build-essential libssl-dev libxml2-dev libpcre3-dev libpcre2-dev libapr1-dev libaprutil1-dev ssl-cert uuid -y
 
 #2. Copie des fichiers binaires dans le répertoire /opt
 wget https://archive.apache.org/dist/httpd/httpd-2.4.49.tar.gz -P /opt
